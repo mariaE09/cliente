@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 APPS_DIR = str(BASE_DIR / "apps")
 sys.path.insert(0, APPS_DIR)
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -28,7 +29,9 @@ SECRET_KEY = 'django-insecure-!4$mw1+r=c9p3qeawf%uc=ma5ce!0^#yi54-ki6u^!d@a1xvkw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+LOGIN_URL = '/login/'
 
 
 # Application definition
@@ -46,13 +49,9 @@ PROJETO_APPS = [
     'clientes.apps.ClientesConfig', 
 ]
 
-TERCEIRO_APPS = [
-
-]
+TERCEIRO_APPS = []
 
 INSTALLED_APPS = DJANGO_APPS + PROJETO_APPS + TERCEIRO_APPS
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

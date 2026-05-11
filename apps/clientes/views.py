@@ -57,7 +57,7 @@ def atualizar_clientes(request,id):
 def excluir_cliente(request, id):
    try:
       clientes = Cliente.objects.get(id=id)
-      cliente.delete()
+      clientes.delete()
    except Cliente.DoesNotExist:
       return HttpResponse('<h1>Erro ao excluir o cliente. Não encontrado</h1>')
    return redirect
